@@ -132,6 +132,9 @@ public class GenusSpeciesEncoder {
 					//The charAt method gets the character from a specific index, starting with 0 and ending with the
 					//number of letters in the word - 1.
 					
+					//Capitalize the potentialCode.
+					potentialCode = potentialCode.toUpperCase();
+					
 					//Run through all previously added codenames to check for uniqueness.
 					for(int j = 0; j < i; j++) {
 						//If the potential code matches an existing code, set unique flag to false, and stop
@@ -173,7 +176,7 @@ public class GenusSpeciesEncoder {
 		try {
 			//Create a file writer to write to the file given by p, and set the file writer to overwrite mode.
 			FileWriter fw = new FileWriter(p.getFileName().toString().substring(0, p.getFileName().toString().length() - 4) 
-					                       + "Code.csv", false);
+					                       + ".csv", false);
 			
 			//Iterate through the genus, species, and code lists to print each entry to the file.
 			for(int i = 0; i < genus.size(); i++) {
